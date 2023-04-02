@@ -3,6 +3,11 @@ uuid = "be74fe99-a4bb-43c4-93a0-b02262abded4"
 authors = ["Alphonsus Adu-Bredu"]
 version = "0.1.0"
 
+[deps]
+Quaternions = "94ee1d12-ae83-5a48-8b1c-48b8ff168ae0"
+RigidBodyDynamics = "366cf18f-59d5-5db9-a4de-86a9f6786172"
+Symbolics = "0c5d862f-8b57-4792-8d23-62f2024744c7"
+
 [compat]
 julia = "1"
 
