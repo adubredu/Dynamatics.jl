@@ -13,4 +13,7 @@ include("dynamics.jl")
 # Core 
 export create_robot
 
+# Kinematics 
+export generate_link_pose_function
+
 end

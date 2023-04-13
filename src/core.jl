@@ -9,6 +9,6 @@ function create_robot(urdfpath::String; floating=true)
     @variables vvars[1:Nv]
     for i=1:Nq q[i] = qvars[i] end 
     for i=1:Nv v[i] = vvars[i] end 
-    robot = Robot(mechanism, state)
+    robot = Robot(mechanism, state, qvars, vvars)
     return robot
 end
