@@ -1,4 +1,4 @@
-function generate_link_pose_function(link_name::String, filename::String)
+function generate_link_pose_function(robot::Robot, link_name::String, filename::String)
 end
 
 function generate_relative_link_pose_function(from_link_name::String, to_link_name::String, filename::String)
