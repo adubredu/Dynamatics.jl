@@ -16,7 +16,7 @@ end
 function generate_function(expr, robot::Robot, 
                         function_name::String, 
                         filename::String)
-    func_header="function $function_name(qvars, vvars)\n"
+    func_header="function $function_name(qvars, vvars)\n" 
     func_string = string(expr)
     func_string = replace(func_string, "Symbolics.Num"=>"")
     nq = num_positions(robot.state)
@@ -32,5 +32,6 @@ function generate_function(expr, robot::Robot,
     end
     gen_func_string = func_header*vars*"\n    out = "*func_string*"\n    return out\nend"
     write(filename, gen_func_string)
+
     nothing
 end

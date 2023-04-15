@@ -4,6 +4,7 @@ authors = ["Alphonsus Adu-Bredu"]
 version = "0.1.0"
 
 [deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 Quaternions = "94ee1d12-ae83-5a48-8b1c-48b8ff168ae0"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 RigidBodyDynamics = "366cf18f-59d5-5db9-a4de-86a9f6786172"
