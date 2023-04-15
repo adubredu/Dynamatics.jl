@@ -14,6 +14,7 @@ include("dynamics.jl")
 export create_robot
 
 # Kinematics 
-export generate_link_pose_function
+export generate_link_pose_function,
+        generate_relative_link_pose_function
 
 end
