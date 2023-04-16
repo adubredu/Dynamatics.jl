@@ -13,7 +13,7 @@ function create_robot(urdfpath::String; floating=true)
     return robot
 end
 
-function generate_function(expr, robot::Robot, 
+function generate_function(expr::Expr, robot::Robot, 
                         function_name::String, 
                         filename::String)
     func_header="function $function_name(qvars, vvars)\n" 
@@ -32,6 +32,5 @@ function generate_function(expr, robot::Robot,
     end
     gen_func_string = func_header*vars*"\n    out = "*func_string*"\n    return out\nend"
     write(filename, gen_func_string)
-
     nothing
 end
