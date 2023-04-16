@@ -13,7 +13,7 @@ function create_robot(urdfpath::String; floating=true)
     return robot
 end
 
-function generate_function(expr::Expr, robot::Robot, 
+function generate_function(expr, robot::Robot, 
                         function_name::String, 
                         filename::String)
     func_header="function $function_name(qvars, vvars)\n" 
@@ -31,6 +31,33 @@ function generate_function(expr::Expr, robot::Robot,
         vars = vars*"    vvars$i = vvars[$i]\n"
     end
     gen_func_string = func_header*vars*"\n    out = "*func_string*"\n    return out\nend"
+    write(filename, gen_func_string)
+    nothing
+end
+
+function generate_function2(expr, robot::Robot, 
+            function_name::String, 
+            filename::String)
+    func_header="function $function_name(qvars, vvars)\n"
+    outlength = length(expr)
+    func_string = "\n    out = zeros($outlength)"
+    for i=1:outlength
+        elstr = "\n    out[$i] = "*string(expr[i])
+        func_string *= elstr
+    end
+    func_string = replace(func_string, "Symbolics.Num"=>"")
+    nq = num_positions(robot.state)
+    nv = num_velocities(robot.state)
+    vars = ""
+    for i = 1:nq  
+        func_string = replace(func_string, "qvars[$i]"=>"qvars$i")
+        vars = vars*"    qvars$i = qvars[$i]\n"
+    end
+    for i = 1:nv  
+        func_string = replace(func_string, "vvars[$i]"=>"vvars$i")
+        vars = vars*"    vvars$i = vvars[$i]\n"
+    end
+    gen_func_string = func_header*vars*"\n    "*func_string*"\n    return out\nend"
     write(filename, gen_func_string)
     nothing
 end
