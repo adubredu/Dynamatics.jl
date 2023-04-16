@@ -10,9 +10,7 @@ function generate_link_pose_function(robot::Robot, link_name::String;
     t = transform(pt, TF).v
     R = rotation(TF)
     T = return_val == :orientation ? R : t  
-    if write_to_file 
-        generate_function(T, robot, function_name, filename)
-    end
+    write_to_file && generate_function(T, robot, function_name, filename) 
     return T
 end
 
@@ -32,9 +30,7 @@ function generate_relative_link_pose_function(robot::Robot, from_link_name::Stri
     t = transform(pt, TF).v
     R = rotation(TF)
     T = return_val == :orientation ? R : t
-    if write_to_file 
-        generate_function(T, robot, function_name, filename)
-    end
+    write_to_file && generate_function(T, robot, function_name, filename) 
     return T
 end
 
