@@ -114,7 +114,7 @@ function generate_function3(expr, robot::Robot,
         func_string = replace(func_string, "vvars[$i]"=>"vvars$i")
         vars = vars*"    vvars$i = vvars[$i]\n"
     end
-    gen_func_string = func_header*vars*"\n    "*func_string*"\n    return out\nend"
+    gen_func_string = func_header*vars*"    "*func_string*"\n    return out\nend"
     write(filename, gen_func_string)
     nothing
 
