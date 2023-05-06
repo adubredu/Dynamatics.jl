@@ -3,6 +3,7 @@ module Dynamatics
 using Symbolics 
 using Quaternions 
 using RigidBodyDynamics
+using MacroTools
 
 include("overloads.jl")
 include("types.jl") 

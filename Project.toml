@@ -5,9 +5,11 @@ version = "0.1.0"
 
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+MacroTools = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 Quaternions = "94ee1d12-ae83-5a48-8b1c-48b8ff168ae0"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 RigidBodyDynamics = "366cf18f-59d5-5db9-a4de-86a9f6786172"
+SymbolicUtils = "d1185830-fcd6-423d-90d6-eec64667417b"
 Symbolics = "0c5d862f-8b57-4792-8d23-62f2024744c7"
 
 [compat]
